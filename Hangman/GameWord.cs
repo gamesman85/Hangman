@@ -1,3 +1,5 @@
+using System;
+
 namespace Hangman;
 
 public class GameWord
@@ -5,7 +7,7 @@ public class GameWord
     private readonly Random _random = new Random();
     private readonly string _randomWord;
     
-    private static readonly string[] _words =
+    private static readonly string[] Words =
     {
         "paranoid",
         "waterfall",
@@ -16,7 +18,7 @@ public class GameWord
 
     public GameWord()
     {
-        _randomWord = _words[_random.Next(_words.Length)];
+        _randomWord = Words[_random.Next(Words.Length)];
     }
 
     public string GetWord()
