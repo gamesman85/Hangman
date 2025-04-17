@@ -1,4 +1,5 @@
 using System;
+using System.Text;
 
 namespace Hangman;
 
@@ -24,5 +25,23 @@ public class GameWord
     public string GetWord()
     {
         return _randomWord;
+    }
+
+    public string GetHyphenatedWord(string lettersToShow)
+    {
+        StringBuilder text = new StringBuilder();
+        foreach (char letter in _randomWord)
+        {
+            if (lettersToShow.Contains(letter))
+            {
+                text.Append(letter + " ");
+            }
+            else
+            {
+                text.Append("_ ");
+            }
+        }
+
+        return text.ToString().Trim();
     }
 }
