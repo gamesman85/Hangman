@@ -10,6 +10,7 @@ public class GameWord
     
     private static readonly string[] Words =
     {
+        "immutable",
         "paranoid",
         "waterfall",
         "mountain",
@@ -30,6 +31,7 @@ public class GameWord
     public string GetHyphenatedWord(string lettersToShow)
     {
         StringBuilder text = new StringBuilder();
+        
         foreach (char letter in _randomWord)
         {
             if (lettersToShow.Contains(letter))
@@ -38,7 +40,7 @@ public class GameWord
             }
             else
             {
-                text.Append("_ ");
+                text.Append("- ");
             }
         }
 

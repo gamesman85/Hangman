@@ -32,7 +32,7 @@ public class GuessTracker
         else
         {
             _incorrectGuesses += letter;
-            return false;
+            return true;
         }
     }
 
@@ -43,6 +43,7 @@ public class GuessTracker
 
     public bool IsWordComplete()
     {
-        return !_gameWord.GetHyphenatedWord(_correctGuesses).Contains("_");
+        string progress = _gameWord.GetHyphenatedWord(_correctGuesses);
+        return !progress.Contains('-');
     }
 }
